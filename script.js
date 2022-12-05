@@ -23,12 +23,47 @@ document.addEventListener('DOMContentLoaded', () => {
             context1.drawImage(initialimage, 0, 0, canvas1.width, canvas1.height);
 
             document.getElementById('rotate').onclick = () => {
-                // context1.save();
-                // context1.translate(canvas1.width/2,canvas1.height/2);
-            
-                context1.rotate(Math.PI/2);
-                context1.drawImage(initialimage,-initialimage.width/2,-initialimage.height/2); 
-                // context1.restore()           
+                // console.log('rotate');
+
+    
+                var mCanvas=document.createElement('canvas');
+                mCanvas.width=canvas1.width;
+                mCanvas.height=canvas1.height;
+                var mctx=mCanvas.getContext('2d');
+              
+                // Draw your canvas onto the second canvas
+                mctx.drawImage(canvas1,0,0);
+              
+                // Clear your main canvas
+                context1.clearRect(0,0,canvas1.width,canvas1.height);
+              
+                // Rotate the main canvas
+                let h = canvas1.height;
+                let w = canvas1.width;
+                canvas1.height = w;
+                canvas1.width = h;
+                const cropdiv = document.getElementById('cropdiv');
+                cropdiv.style.width = (canvas1.width - 100).toString() + 'px';
+                cropdiv.style.height = (canvas1.height - 100).toString() + 'px';
+                cropdiv.style.top = (parseInt(getComputedStyle(document.querySelector('#cropmodal .modal-body')).paddingTop) + 50).toString() + 'px';
+                cropdiv.style.left = (parseInt(getComputedStyle(document.querySelector('#cropmodal .modal-body')).paddingLeft) + 50).toString() + 'px';
+
+              
+                // set the rotation point as center of the canvas
+                // (but you can set any rotation point you desire)
+                context1.translate(canvas1.width/2,canvas1.height/2);
+              
+                // rotate by 90 degrees (==PI/2)
+                var radians=90/180*Math.PI;
+                context1.rotate(radians);
+              
+              
+                // Draw the second canvas back to the (now rotated) main canvas:
+                context1.drawImage(mCanvas,-w/2,-h/2);
+              
+                // clean up -- unrotate and untranslate
+                context1.rotate(-radians);
+                context1.translate(-canvas1.width/2,-canvas1.height/2);
             }
 
         }

@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const canvas1 = document.getElementById('canvas1');
     const cropdiv = document.getElementById('cropdiv');
     cropdiv.onmousedown = (e) => {
         if (e.target.id === 'cropdiv') {
@@ -52,10 +53,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     const newcropdivwidth = cropdivwidth + newmousex - mousex;
                     const newcropdivheight = cropdivheight - newmousey + mousey;
                     
-                    if (newcropdivwidth >= 0 && newcropdivwidth + cropdivleft <= document.querySelector('#cropmodal .modal-body > div').offsetWidth) {
+                    if (newcropdivwidth >= 0 && newcropdivwidth + cropdivleft <= canvas1.offsetWidth) {
                         cropdiv.style.width = newcropdivwidth + 'px';
                     }
-                    if (newcropdivheight >= 0 && newcropdivheight + cropdivtop <= document.querySelector('#cropmodal .modal-body > div').offsetHeight) {
+                    if (newcropdivheight >= 0 && newcropdivheight + cropdivtop <= canvas1.offsetHeight) {
                         cropdiv.style.height = newcropdivheight + 'px';
                         cropdiv.style.top = cropdivtop + newmousey - mousey + 'px';
                     }
@@ -64,11 +65,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     const newcropdivwidth1 = cropdivwidth - newmousex + mousex;
                     const newcropdivheight1 = cropdivheight - newmousey + mousey;
                     
-                    if (newcropdivwidth1 >= 0 && newcropdivwidth1 + cropdivleft <= document.querySelector('#cropmodal .modal-body > div').offsetWidth) {
+                    if (newcropdivwidth1 >= 0 && newcropdivwidth1 + cropdivleft <= canvas1.offsetWidth) {
                         cropdiv.style.width = newcropdivwidth1 + 'px';
                         cropdiv.style.left = cropdivleft + newmousex - mousex + 'px';
                     }
-                    if (newcropdivheight1 >= 0 && newcropdivheight1 + cropdivtop <= document.querySelector('#cropmodal .modal-body > div').offsetHeight) {
+                    if (newcropdivheight1 >= 0 && newcropdivheight1 + cropdivtop <= canvas1.offsetHeight) {
                         cropdiv.style.height = newcropdivheight1 + 'px';
                         cropdiv.style.top = cropdivtop + newmousey - mousey + 'px';
                     }
@@ -77,10 +78,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     const newcropdivwidth = cropdivwidth + newmousex - mousex;
                     const newcropdivheight = cropdivheight + newmousey - mousey;
                     
-                    if (newcropdivwidth >= 0 && newcropdivwidth + cropdivleft <= document.querySelector('#cropmodal .modal-body > div').offsetWidth) {
+                    if (newcropdivwidth >= 0 && newcropdivwidth + cropdivleft <= canvas1.offsetWidth) {
                         cropdiv.style.width = newcropdivwidth + 'px';
                     }
-                    if (newcropdivheight >= 0 && newcropdivheight + cropdivtop <= document.querySelector('#cropmodal .modal-body > div').offsetHeight) {
+                    if (newcropdivheight >= 0 && newcropdivheight + cropdivtop <= canvas1.offsetHeight) {
                         cropdiv.style.height = newcropdivheight + 'px';
                     }
                 }
@@ -88,11 +89,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     const newcropdivwidth = cropdivwidth - newmousex + mousex;
                     const newcropdivheight = cropdivheight + newmousey - mousey;
                     
-                    if (newcropdivwidth >= 0 && newcropdivwidth + cropdivleft <= document.querySelector('#cropmodal .modal-body > div').offsetWidth) {
+                    if (newcropdivwidth >= 0 && newcropdivwidth + cropdivleft <= canvas1.offsetWidth) {
                         cropdiv.style.width = newcropdivwidth + 'px';
                         cropdiv.style.left = cropdivleft + newmousex - mousex + 'px';
                     }
-                    if (newcropdivheight >= 0 && newcropdivheight + cropdivtop <= document.querySelector('#cropmodal .modal-body > div').offsetHeight) {
+                    if (newcropdivheight >= 0 && newcropdivheight + cropdivtop <= canvas1.offsetHeight) {
                         cropdiv.style.height = newcropdivheight + 'px';
                     }
                 }
