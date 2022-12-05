@@ -23,7 +23,15 @@
                 <div class="modal-header">
                     <button id="close1" data-bs-dismiss="modal" aria-label="Close">back</button>
                     <button id="rotate">rotate</button>
-                    <button>flip</button>
+                    <div class="dropdown">
+                        <button class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            Flip
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li id="fliph">Horizontal Flip</li>
+                            <li id="flipv">Vertical Flip</li>
+                        </ul>                        
+                    </div>
                     <button id="crop">crop</button>    
                 </div>
                 <div class="modal-body">
