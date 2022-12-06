@@ -66,11 +66,11 @@
                 <div class="modal-body d-flex flex-column justify-content-around align-items-center">
                     <canvas id="canvas2"></canvas>
                     <div class="py-3 d-flex justify-content-around">
-                        <button class="btn frames">original</button>
-                        <button class="btn frames"><img class="w-100" src="asset/user_image_frame_1.png" alt=""></button>
-                        <button class="btn frames"><img class="w-100" src="asset/user_image_frame_2.png" alt=""></button>
-                        <button class="btn frames"><img class="w-100" src="asset/user_image_frame_3.png" alt=""></button>
-                        <button class="btn frames"><img class="w-100" src="asset/user_image_frame_4.png" alt=""></button>        
+                        <button class="btn frames" id="original">original</button>
+                        <button class="btn frames f" id="frame-1"><img class="w-100" src="asset/user_image_frame_1.png" alt=""></button> <!--f is for js-->
+                        <button class="btn frames f" id="frame-2"><img class="w-100" src="asset/user_image_frame_2.png" alt=""></button>
+                        <button class="btn frames f" id="frame-3"><img class="w-100" src="asset/user_image_frame_3.png" alt=""></button>
+                        <button class="btn frames f" id="frame-4"><img class="w-100" src="asset/user_image_frame_4.png" alt=""></button>        
                     </div>
                     <button id="final" class="btn green">Use this image</button>
                 </div>
@@ -87,8 +87,9 @@
                 <input type="file" name="input" id="input" accept="image/*">
             </div>
         </div>
-        <div id="outputd" class="mt-3">
+        <div id="outputd" class="mt-3 d-flex justify-content-center align-items-center flex-column">
             <img id="output">
+            <a download="image.png" class="btn green" id="download" style="display: none;">Download</a>
         </div>
     </div>
 
